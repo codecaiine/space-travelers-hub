@@ -1,13 +1,25 @@
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+} from 'react-router-dom';
+import React from 'react';
+import Navbar from './components/Navbar';
+import Error from './pages/Error';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Group project</h1>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <Router>
+    <Navbar />
+    <Switch>
+      <Route exact path="/" />
+      <Route path="/rockets" />
+      <Route path="/missions" />
+      <Route path="/my-profile" />
+      <Route path="*">
+        <Error />
+      </Route>
+    </Switch>
+  </Router>
+);
 
 export default App;
