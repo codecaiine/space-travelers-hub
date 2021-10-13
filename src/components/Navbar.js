@@ -1,25 +1,49 @@
 import React from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
-import { v4 as uuidv4 } from 'uuid';
-import Logo from '../planet_bigger.png';
-import NavStyles from './Navbar.module.css';
+import { NavLink } from 'react-router-dom';
+import logo from '../images/planet.png';
 
 const Navbar = () => {
-  const location = useLocation();
+  const links = [
+    {
+      id: 1,
+      path: '/',
+      text: 'Rockets',
+    },
+    {
+      id: 2,
+      path: '/missions',
+      text: 'Missions',
+    },
+    {
+      id: 3,
+      path: '/myprofile',
+      text: 'My Profile',
+    },
+  ];
 
   return (
-    <nav className={NavStyles.NavbarContainer}>
-      <div className={NavStyles.logoContainer}>
-        <img src={Logo} alt="" className={`${NavStyles.logo} ${NavStyles.mr1}`} />
-        <h1>Space Travelers HUB</h1>
-      </div>
-      <div className={NavStyles.linksContainer}>
-        <NavLink key={uuidv4()} className={(location.pathname === '/rockets' ? `${NavStyles.linksStyles} ${NavStyles.mr1} ${NavStyles.active}` : `${NavStyles.linksStyles} ${NavStyles.mr1}`)} to="/rockets">Rockets</NavLink>
-        <NavLink key={uuidv4()} className={(location.pathname === '/missions' ? `${NavStyles.linksStyles} ${NavStyles.borderRight} ${NavStyles.active}` : `${NavStyles.linksStyles} ${NavStyles.borderRight}`)} to="/missions">Missions</NavLink>
-        <NavLink key={uuidv4()} className={(location.pathname === '/my-profile' ? `${NavStyles.linksStyles} ${NavStyles.ml1} ${NavStyles.active}` : `${NavStyles.linksStyles} ${NavStyles.ml1}`)} to="/my-profile">My Profile</NavLink>
-      </div>
-
-    </nav>
+    <>
+      <nav className="nav-bar">
+        <div>
+          <img src={logo} alt="Space-Ship Logo" />
+          <h3>Space Travelers&apos; Hub</h3>
+        </div>
+        <ul>
+          {links.map((link) => (
+            <li key={link.id}>
+              <NavLink
+                to={link.path}
+                activeClassName="current"
+                className="nav-link"
+                exact
+              >
+                {link.text}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </>
   );
 };
 

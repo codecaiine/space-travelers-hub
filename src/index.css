@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-bar {
+  border-bottom: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 3%;
+}
+
+.nav-link {
+  text-decoration: none;
+}
+
+.current {
+  text-decoration: underline;
+  color: red;
+}

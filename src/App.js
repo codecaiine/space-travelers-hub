@@ -1,25 +1,25 @@
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-} from 'react-router-dom';
 import React from 'react';
+import { Route, Switch } from 'react-router';
 import Navbar from './components/Navbar';
-import Error from './pages/Error';
+import Profile from './pages/Profile';
+import Missions from './pages/Missions';
+import Rockets from './pages/Rockets';
 
 const App = () => (
-  <Router>
+  <>
     <Navbar />
     <Switch>
-      <Route exact path="/" />
-      <Route path="/rockets" />
-      <Route path="/missions" />
-      <Route path="/my-profile" />
-      <Route path="*">
-        <Error />
+      <Route exact path="/myprofile">
+        <Profile />
+      </Route>
+      <Route exact path="/missions">
+        <Missions />
+      </Route>
+      <Route exact path="/">
+        <Rockets />
       </Route>
     </Switch>
-  </Router>
+  </>
 );
 
 export default App;
