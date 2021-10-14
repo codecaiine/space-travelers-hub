@@ -8,7 +8,7 @@ const Rockets = () => {
     <>
       <ul>
         {list.map((each) => (
-            <SingleRocket
+          <SingleRocket
             key={each.id}
             name={each.rocketName}
             description={each.description}
@@ -17,7 +17,7 @@ const Rockets = () => {
         ))}
       </ul>
     </>
-   );
-  };
+  );
+};
 
 export default Rockets;
