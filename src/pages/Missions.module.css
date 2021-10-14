@@ -1,0 +1,59 @@
+table {
+  width: 95%;
+  margin: 40px auto;
+  text-align: center;
+  background: #fff;
+}
+
+table,
+th,
+td {
+  border: 1px solid rgba(201, 179, 179, 0.474);
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 15px 10px;
+}
+
+td:nth-child(2) {
+  width: 70%;
+  text-align: justify;
+}
+
+.mission-row:nth-child(odd) {
+  background-color: lightgray;
+}
+
+td:nth-child(3),
+td:nth-child(4) {
+  width: 15%;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.member {
+  text-transform: uppercase;
+  color: #fff;
+  background-color: gray;
+  padding: 4px 6px;
+  font-size: 13px;
+  border-radius: 5px;
+}
+
+.join {
+  padding: 8px 12px;
+  border-radius: 5px;
+  outline: none;
+  border: 2px solid #979696;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.join:hover {
+  background-color: gray;
+  color: #fff;
+}
