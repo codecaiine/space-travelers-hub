@@ -1,16 +1,27 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import SingleRocket from '../components/SingleRocket';
+import { reserve } from '../redux/rockets/rocketsRedux';
 
 const Rockets = () => {
   const list = useSelector((state) => state.rocketsReducer);
+  const dispatch = useDispatch();
+
+  const reserveRocket = (id) => {
+    dispatch(reserve(list, id));
+  };
   return (
     <>
-      <h1>
-        Rockets
-      </h1>
       <ul>
         {list.map((each) => (
-          <li key={each.id}>{each.description}</li>
+          <SingleRocket
+            key={each.id}
+            name={each.rocketName}
+            description={each.description}
+            image={each.flickrImages}
+            id={each.id}
+            reserve={reserveRocket}
+          />
         ))}
       </ul>
     </>

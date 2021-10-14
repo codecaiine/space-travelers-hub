@@ -1,7 +1,13 @@
 const FETCH_MISSIONS = 'react-spacex/missions/FETCH_MISSIONS';
+const JOIN_MISSIONS = 'react-spacex/missions/JOIN_MISSIONS';
 
 export const fetchMissions = (missions) => ({
   type: FETCH_MISSIONS,
+  missions,
+});
+
+export const joinMission = (missions) => ({
+  type: JOIN_MISSIONS,
   missions,
 });
 
@@ -33,6 +39,17 @@ const missionsReducer = (state = initialState, action) => {
       return {
         ...state,
         newMissions: action.missions,
+      };
+
+    case JOIN_MISSIONS:
+      return {
+        ...state,
+        newMissions: state.newMissions.map((mission) => {
+          if (mission.mission_id !== action.id) {
+            return { ...mission };
+          }
+          return { ...mission, reserved: true };
+        }),
       };
     default:
       return state;

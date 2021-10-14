@@ -9,11 +9,13 @@ const Navbar = () => {
       path: '/',
       text: 'Rockets',
     },
+
     {
       id: 2,
       path: '/missions',
       text: 'Missions',
     },
+
     {
       id: 3,
       path: '/myprofile',
@@ -24,10 +26,9 @@ const Navbar = () => {
   return (
     <header>
       <nav className="nav-bar">
-
-        <div className="nav-wrapper">
-          <div className="space-wrapper">
-            <img src={logo} alt="Space Ship Logo" />
+        <div className="inner-nav">
+          <div className="space">
+            <img src={logo} alt="Space-Ship Logo" />
             <h1>Space Travelers&apos; Hub</h1>
           </div>
           <ul>
@@ -45,7 +46,6 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
-
       </nav>
     </header>
   );
