@@ -9,7 +9,7 @@ const Missions = () => {
   return (
     <>
       <ul>
-      <table>
+        <table>
           <thead>
             <tr>
               <th>Mission</th>

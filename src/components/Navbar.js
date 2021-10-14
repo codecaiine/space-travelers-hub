@@ -25,7 +25,7 @@ const Navbar = () => {
     <header>
       <nav className="nav-bar">
 
-      <div className="nav-wrapper">
+        <div className="nav-wrapper">
           <div className="space-wrapper">
             <img src={logo} alt="Space Ship Logo" />
             <h1>Space Travelers&apos; Hub</h1>
@@ -48,7 +48,7 @@ const Navbar = () => {
 
       </nav>
     </header>
-     );
-    };
-    
-    export default Navbar;
+  );
+};
+
+export default Navbar;
