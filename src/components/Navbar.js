@@ -22,29 +22,33 @@ const Navbar = () => {
   ];
 
   return (
-    <>
+    <header>
       <nav className="nav-bar">
-        <div>
-          <img src={logo} alt="Space-Ship Logo" />
-          <h3>Space Travelers&apos; Hub</h3>
-        </div>
-        <ul>
-          {links.map((link) => (
-            <li key={link.id}>
-              <NavLink
-                to={link.path}
-                activeClassName="current"
-                className="nav-link"
-                exact
-              >
-                {link.text}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </>
-  );
-};
 
-export default Navbar;
+      <div className="nav-wrapper">
+          <div className="space-wrapper">
+            <img src={logo} alt="Space Ship Logo" />
+            <h1>Space Travelers&apos; Hub</h1>
+          </div>
+          <ul>
+            {links.map((link) => (
+              <li key={link.id} className="nav-list">
+                <NavLink
+                  to={link.path}
+                  activeClassName="current"
+                  className="nav-link"
+                  exact
+                >
+                  {link.text}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+      </nav>
+    </header>
+     );
+    };
+    
+    export default Navbar;
