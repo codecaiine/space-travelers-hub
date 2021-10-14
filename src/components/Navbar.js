@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import logo from '../images/planet.png';
+import logo from '../planet.png';
 
 const Navbar = () => {
   const links = [
@@ -9,11 +9,13 @@ const Navbar = () => {
       path: '/',
       text: 'Rockets',
     },
+
     {
       id: 2,
       path: '/missions',
       text: 'Missions',
     },
+
     {
       id: 3,
       path: '/myprofile',
@@ -22,28 +24,30 @@ const Navbar = () => {
   ];
 
   return (
-    <>
+    <header>
       <nav className="nav-bar">
-        <div>
-          <img src={logo} alt="Space-Ship Logo" />
-          <h3>Space Travelers&apos; Hub</h3>
+        <div className="inner-nav">
+          <div className="space">
+            <img src={logo} alt="Space-Ship Logo" />
+            <h1>Space Travelers&apos; Hub</h1>
+          </div>
+          <ul>
+            {links.map((link) => (
+              <li key={link.id} className="nav-list">
+                <NavLink
+                  to={link.path}
+                  activeClassName="current"
+                  className="nav-link"
+                  exact
+                >
+                  {link.text}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
         </div>
-        <ul>
-          {links.map((link) => (
-            <li key={link.id}>
-              <NavLink
-                to={link.path}
-                activeClassName="current"
-                className="nav-link"
-                exact
-              >
-                {link.text}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
       </nav>
-    </>
+    </header>
   );
 };
 

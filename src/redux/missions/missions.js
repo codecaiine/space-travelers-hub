@@ -1,50 +1,56 @@
-const initialState = [];
-const JOIN_MISSION = 'spaceTravlers/missions/JOIN_Mission';
-const FETCH_DATA = 'spaceTravlers/missions/FETCH_DATA';
-const LEAVE_MISSION = 'spaceTravlers/missions/LEAVE_MISSION';
-export const fetchData = () => async (dispatch) => {
-  const response = await fetch('https://api.spacexdata.com/v3/missions');
+const FETCH_MISSIONS = 'react-spacex/missions/FETCH_MISSIONS';
+const JOIN_MISSIONS = 'react-spacex/missions/JOIN_MISSIONS';
 
-  const data = await response.json();
+export const fetchMissions = (missions) => ({
+  type: FETCH_MISSIONS,
+  missions,
+});
 
-  dispatch({
-    type: FETCH_DATA,
-    payload: [...data],
-  });
+export const joinMission = (missions) => ({
+  type: JOIN_MISSIONS,
+  missions,
+});
+
+export const fetchMIssionsFromApi = async () => {
+  const missions = await fetch('https://api.spacexdata.com/v3/missions');
+  const response = await missions.json();
+  const newResponse = response.map((mission) => (
+    {
+      id: mission.mission_id,
+      name: mission.mission_name,
+      description: mission.description,
+    }
+  ));
+  return newResponse;
 };
 
-export const joinMission = (payload) => ({
-  type: JOIN_MISSION,
-  payload,
-});
+export const missionsThunk = () => async (dispatch) => {
+  const newMissions = await fetchMIssionsFromApi();
+  if (newMissions) {
+    dispatch(fetchMissions(newMissions));
+  }
+};
 
-export const leaveMission = (payload) => ({
-  type: LEAVE_MISSION,
-  payload,
-});
+const initialState = [];
 
 const missionsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_DATA:
-      return action.payload;
-    case JOIN_MISSION: {
-      const newState = state.map((mission) => {
-        if (mission.mission_id === action.payload) {
-          return { ...mission, joined: true };
-        }
-        return mission;
-      });
-      return newState;
-    }
-    case LEAVE_MISSION: {
-      const newState = state.map((mission) => {
-        if (mission.mission_id === action.payload) {
-          return { ...mission, joined: false };
-        }
-        return mission;
-      });
-      return newState;
-    }
+    case FETCH_MISSIONS:
+      return {
+        ...state,
+        newMissions: action.missions,
+      };
+
+    case JOIN_MISSIONS:
+      return {
+        ...state,
+        newMissions: state.newMissions.map((mission) => {
+          if (mission.mission_id !== action.id) {
+            return { ...mission };
+          }
+          return { ...mission, reserved: true };
+        }),
+      };
     default:
       return state;
   }
