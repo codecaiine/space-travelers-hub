@@ -1,16 +1,19 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import SingleRocket from '../components/SingleRocket';
 
 const Rockets = () => {
   const list = useSelector((state) => state.rocketsReducer);
   return (
     <>
-      <h1>
-        Rockets
-      </h1>
       <ul>
         {list.map((each) => (
-          <li key={each.id}>{each.description}</li>
+          <SingleRocket
+            key={each.id}
+            name={each.rocketName}
+            description={each.description}
+            image={each.flickrImages}
+          />
         ))}
       </ul>
     </>

@@ -16,13 +16,13 @@ body {
   border-bottom: 1px solid black;
 }
 
-.nav-wrapper,
-.space-wrapper {
+.inner-nav,
+.space {
   display: flex;
   align-items: center;
 }
 
-.nav-wrapper {
+.inner-nav {
   width: 90%;
   margin: 0 auto;
   justify-content: space-between;
@@ -30,15 +30,15 @@ body {
   height: 45px;
 }
 
-.space-wrapper {
+.space {
   gap: 10px;
 }
 
-.space-wrapper img {
+.space img {
   width: 40px;
 }
 
-.space-wrapper h1 {
+.space h1 {
   display: none;
 }
 
@@ -56,6 +56,11 @@ body {
 .nav-link {
   text-decoration: none;
   color: #333;
+  transition: 300ms ease-in;
+}
+
+.nav-link:hover {
+  opacity: 0.7;
 }
 
 .current {
@@ -64,13 +69,17 @@ body {
 }
 
 @media all and (min-width: 768px) {
-  .space-wrapper h1 {
+  .space {
+    cursor: pointer;
+  }
+
+  .space h1 {
     display: block;
   }
 }
 
 @media all and (min-width: 1024px) {
-  .nav-wrapper {
+  .inner-nav {
     height: 80px;
   }
 

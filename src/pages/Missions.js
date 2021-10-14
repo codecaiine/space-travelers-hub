@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import SingleMission from '../components/SingleMission';
-import './Missions.module.css';
+import './Missions.css';
 
 const Missions = () => {
   const missions = useSelector((state) => state.missionsReducer.newMissions);
@@ -23,7 +23,7 @@ const Missions = () => {
               const { name, id, description } = mission;
               return (
                 <tr key={id} className="mission-row">
-                  <SingleMission name={name} description={description} />
+                  <SingleMission name={name} description={description} id={id} />
                 </tr>
               );
             })}
@@ -33,4 +33,5 @@ const Missions = () => {
     </>
   );
 };
+
 export default Missions;

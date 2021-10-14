@@ -1,0 +1,24 @@
+.each-rocket {
+  margin-block: 2%;
+  width: 95%;
+  margin-inline: auto;
+  display: flex;
+  gap: 2%;
+}
+
+.img-size {
+  width: 200px;
+  height: 175px;
+}
+
+.rocket-details > p {
+  margin-block: 1.25%;
+  font-size: 16px;
+}
+
+.rocket-reserve-btn {
+  background-color: blue;
+  color: white;
+  width: 25%;
+  height: 21%;
+}
