@@ -3,6 +3,12 @@
 This is web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.
 We work with  data from the SpaceX API.
 
+
+
+## Live Demo
+
+[Live Demo Link](https://math-magicians-aka.netlify.app/)
+
 ## Built 
 
 - React
@@ -39,6 +45,11 @@ Please get your browser update.
 - Twitter: [@yannicknaka](https://twitter.com/yannicknaka)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/yannick-no%C3%ABl-aka/)
 
+👤 **Isabella Namutenda**
+
+- Location: Kenya
+- GitHub: [@Isabellanamutenda](https://github.com/Isabellanamutenda)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
@@ -53,5 +64,6 @@ Give a ⭐️ if you like this project!
 
 - Thanks to Microverse
 - Yannick AKA
-- Isabella
+- Isabella Namutenda
+- Adedamola Shittu
 
