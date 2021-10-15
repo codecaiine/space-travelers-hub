@@ -3,9 +3,17 @@
 }
 
 .profile {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   margin-top: 40px;
+}
+
+.no-mission {
+  text-align: center;
+  margin-top: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-style: italic;
+  color: blue;
 }
 
 .profile h2 {
@@ -28,12 +36,35 @@
 }
 
 .list {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
   list-style: none;
   padding: 10px 15px;
   border-bottom: 1px solid rgb(148, 146, 146);
 }
 
-@media all and (min-width: 768px) {
+.list .name {
+  width: 32%;
+}
+
+.wiki {
+  text-decoration: none;
+  color: #333;
+  transition: 300ms ease-in-out;
+  font-size: 14px;
+}
+
+.wiki:hover {
+  color: blue;
+  text-decoration: underline;
+}
+
+.wiki:active {
+  color: blue;
+}
+
+@media all and (min-width: 1024px) {
   .profile {
     display: flex;
     justify-content: space-between;
@@ -43,6 +74,10 @@
 
   .profile h2 {
     text-align: start;
+  }
+
+  .list .name {
+    width: 40%;
   }
 
   .rockets {
