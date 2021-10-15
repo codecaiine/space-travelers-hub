@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import SingleMission from '../components/SingleMission';
-import './Missions.css';
+import './Missions.module.css';
 
 const Missions = () => {
   const missions = useSelector((state) => state.missionsReducer.newMissions);

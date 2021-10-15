@@ -38,4 +38,3 @@ SingleMission.propTypes = {
 };
 
 export default SingleMission;
-
