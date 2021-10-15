@@ -16,7 +16,7 @@ We work with  data from the SpaceX API.
 
 ## Live Demo
 
-[Live Demo Link](https://math-magicians-aka.netlify.app/)
+[Live Demo Link](https://space-travelers-hub-aka.netlify.app/)
 
 ## Built 
 
