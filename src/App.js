@@ -6,7 +6,7 @@ import Profile from './pages/Profile';
 import Rockets from './pages/Rockets';
 import Missions from './pages/Missions';
 import { missionsThunk } from './redux/missions/missions';
-import { fetchAPI } from './redux/rockets/rocketsRedux';
+import { fetchAPI } from './redux/rockets/rockets';
 
 const App = () => {
   const dispatch = useDispatch();
