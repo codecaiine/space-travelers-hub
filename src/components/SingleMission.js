@@ -14,7 +14,7 @@ const SingleMission = ({
   return (
     <>
       <td className="name">{name}</td>
-      <td>{description}</td>
+      <td className="descr">{description}</td>
       <td>
         {
         reserved

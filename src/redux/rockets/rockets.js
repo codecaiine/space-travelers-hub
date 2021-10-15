@@ -44,11 +44,13 @@ export const fetchAPI = () => async (dispatch) => {
       id,
       rocket_name: rocketName,
       description,
+      wikipedia,
     } = each;
     const obj = {
       id,
       rocketName,
       description,
+      wikipedia,
       flickrImages: each.flickr_images[0],
     };
     return newArr.push(obj);

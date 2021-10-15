@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../css/rockets.module.css';
+import '../css/rocket.module.css';
 
 const SingleRocket = ({
   name,
@@ -31,11 +31,14 @@ const SingleRocket = ({
             {description}
           </p>
         </div>
-        <button type="submit" className={nameOfClass} onClick={() => reserve(id)}>{status}</button>
+        <div className="btn-container">
+          <button type="submit" className={nameOfClass} onClick={() => reserve(id)}>{status}</button>
+        </div>
       </div>
     </div>
   );
 };
+
 SingleRocket.propTypes = {
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
@@ -44,4 +47,5 @@ SingleRocket.propTypes = {
   reserve: PropTypes.func.isRequired,
   rocket: PropTypes.instanceOf(Object).isRequired,
 };
+
 export default SingleRocket;
