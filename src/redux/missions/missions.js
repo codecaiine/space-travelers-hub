@@ -25,6 +25,7 @@ export const fetchMIssionsFromApi = async () => {
       id: mission.mission_id,
       name: mission.mission_name,
       description: mission.description,
+      wikipedia: mission.wikipedia,
     }
   ));
   return newResponse;

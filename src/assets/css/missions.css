@@ -16,13 +16,9 @@ td {
   padding: 15px 10px;
 }
 
-td:nth-child(2) {
-  width: 70%;
+.descr {
+  width: 55%;
   text-align: justify;
-}
-
-.mission-row:nth-child(odd) {
-  background-color: lightgray;
 }
 
 td:nth-child(3),
@@ -30,8 +26,12 @@ td:nth-child(4) {
   width: 15%;
 }
 
-.name {
-  font-weight: bold;
+.mission-row:nth-child(odd) {
+  background-color: lightgray;
+}
+
+.mission-row:nth-child(even) {
+  background-color: #fff;
 }
 
 .member {
@@ -75,4 +75,58 @@ td:nth-child(4) {
 .leave:hover {
   background-color: rgb(237, 51, 51);
   color: #fff;
+}
+
+@media all and (max-width: 769px) {
+  table {
+    margin-top: 20px;
+  }
+
+  .mission-table {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 30px;
+  }
+
+  .mission-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 8px;
+    margin-top: 30px;
+  }
+
+  .table-head {
+    display: none;
+  }
+
+  table,
+  th,
+  td {
+    border: none;
+  }
+
+  td {
+    padding: 15px 0;
+  }
+
+  td:nth-child(3),
+  td:nth-child(4) {
+    width: 50%;
+  }
+
+  .name {
+    font-weight: bold;
+    font-size: 26px;
+  }
+
+  .descr {
+    font-size: 15px;
+    text-align: justify;
+    width: 90%;
+  }
 }

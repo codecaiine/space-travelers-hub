@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import logo from '../planet.png';
+import logo from '../assets/img/planet.png';
 
 const Navbar = () => {
   const links = [
@@ -18,7 +18,7 @@ const Navbar = () => {
 
     {
       id: 3,
-      path: '/myprofile',
+      path: '/profile',
       text: 'My Profile',
     },
   ];

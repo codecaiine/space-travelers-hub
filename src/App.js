@@ -20,7 +20,7 @@ const App = () => {
     <>
       <Navbar />
       <Switch>
-        <Route exact path="/myprofile">
+        <Route exact path="/profile">
           <Profile />
         </Route>
         <Route exact path="/missions">
