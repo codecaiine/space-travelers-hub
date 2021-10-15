@@ -2,7 +2,6 @@ table {
   width: 95%;
   margin: 40px auto;
   text-align: center;
-  background: #fff;
 }
 
 table,
@@ -38,22 +37,42 @@ td:nth-child(4) {
 .member {
   text-transform: uppercase;
   color: #fff;
-  background-color: gray;
   padding: 4px 6px;
   font-size: 13px;
   border-radius: 5px;
 }
 
-.join {
+.not-active {
+  background-color: gray;
+}
+
+.active {
+  background-color: rgb(86, 177, 86);
+}
+
+.btn {
   padding: 8px 12px;
   border-radius: 5px;
   outline: none;
-  border: 2px solid #979696;
   cursor: pointer;
   transition: 300ms;
 }
 
+.join {
+  border: 2px solid #979696;
+}
+
 .join:hover {
   background-color: gray;
+  color: #fff;
+}
+
+.leave {
+  border: 2px solid rgb(213, 73, 73);
+  color: rgb(213, 73, 73);
+}
+
+.leave:hover {
+  background-color: rgb(237, 51, 51);
   color: #fff;
 }
