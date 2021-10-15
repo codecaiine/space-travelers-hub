@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../css/rocket.module.css';
+import '../css/rockets.module.css';
 
 const SingleRocket = ({
   name,
@@ -26,7 +26,6 @@ const SingleRocket = ({
       <div className="rocket-details">
         <h2>{name}</h2>
         <div>
-          {}
           <p>
             {(rocket.reserved && rocket.reserved === 'true') ? (<span className="reserve-status">Reserved</span>) : null}
             {description}
