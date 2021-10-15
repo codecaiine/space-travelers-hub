@@ -34,7 +34,6 @@ const Profile = () => {
         <div className="rockets">
           <h2>My Rockets</h2>
           <ul className="profile-lists">
-            <></>
             {filteredRockets.map((reserved) => (
               <li key={reserved.id} className="list">{reserved.rocketName}</li>
             ))}
