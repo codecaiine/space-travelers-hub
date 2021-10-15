@@ -13,7 +13,6 @@ body {
 
 .nav-bar {
   width: 100%;
-  border-bottom: 1px solid black;
 }
 
 .inner-nav,
@@ -28,6 +27,7 @@ body {
   justify-content: space-between;
   gap: 3%;
   height: 45px;
+  border-bottom: 1px solid rgb(133, 130, 130);
 }
 
 .space {
@@ -65,7 +65,7 @@ body {
 
 .current {
   text-decoration: underline;
-  color: red;
+  color: blue;
 }
 
 @media all and (min-width: 768px) {
