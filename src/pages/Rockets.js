@@ -13,7 +13,6 @@ const Rockets = () => {
       : dispatch(reserve(list, id))
   );
 
-  // list = useSelector((state) => state.rocketsReducer);
   return (
     <>
       <ul>
