@@ -70,9 +70,5 @@ Feel free to check the [issues page](https://github.com/codecaiine/space-travele
 Give a ⭐️ if you like this project!
 
 ## Acknowledgments
-
-- Thanks to Microverse
-- Yannick AKA
-- Isabella Namutenda
-- Adedamola Shittu
+This project is based on  [Hamza Ellaouzi](https://github.com/Hamzaoutdoors) project.
 

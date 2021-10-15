@@ -1,72 +1,61 @@
-const FETCH_MISSIONS = 'react-spacex/missions/FETCH_MISSIONS';
-const JOIN_MISSIONS = 'react-spacex/missions/JOIN_MISSIONS';
-const LEAVE_MISSIONS = 'react-spacex/missions/LEAVE_MISSIONS';
+import fetchMissions from '../../utils/missions-api';
 
-export const fetchMissions = (missions) => ({
-  type: FETCH_MISSIONS,
-  missions,
+const FETCH_MISSIONS = 'spaceX/missions/FETCH_MISSIONS';
+const ADD_MISSIONS = 'spaceX/missions/ADD_MISSIONS';
+const API_SUCCESS = 'spaceX/missions/API_SUCCESS';
+const API_FAILURE = 'spaceX/missions/API_FAILURE';
+const JOIN_MISSION = 'spaceX/missions/JOIN_MISSION';
+const LEAVE_MISSION = 'spaceX/missions/LEAVE_MISSION';
+
+const initialMissions = [];
+
+export const joinMission = (id) => ({
+  type: JOIN_MISSION,
+  id,
 });
 
-export const joinMission = (missions) => ({
-  type: JOIN_MISSIONS,
-  missions,
+export const leaveMission = (id) => ({
+  type: LEAVE_MISSION,
+  id,
 });
 
-export const leaveMission = (missions) => ({
-  type: LEAVE_MISSIONS,
-  missions,
-});
-
-export const fetchMIssionsFromApi = async () => {
-  const missions = await fetch('https://api.spacexdata.com/v3/missions');
-  const response = await missions.json();
-  const newResponse = response.map((mission) => (
-    {
-      id: mission.mission_id,
-      name: mission.mission_name,
-      description: mission.description,
-      wikipedia: mission.wikipedia,
-    }
-  ));
-  return newResponse;
+export const fetchMissionsAction = () => (dispatch) => {
+  dispatch({ type: FETCH_MISSIONS });
+  return fetchMissions().then(
+    (missions) => {
+      dispatch({ type: API_SUCCESS });
+      dispatch({ type: ADD_MISSIONS, missions });
+    },
+    (error) => {
+      dispatch({ type: API_FAILURE, error });
+    },
+  );
 };
 
-export const missionsThunk = () => async (dispatch) => {
-  const newMissions = await fetchMIssionsFromApi();
-  if (newMissions) {
-    dispatch(fetchMissions(newMissions));
-  }
-};
-
-const initialState = [];
-
-const missionsReducer = (state = initialState, action) => {
+const missionsReducer = (state = initialMissions, action) => {
   switch (action.type) {
-    case FETCH_MISSIONS:
-      return {
-        ...state,
-        newMissions: action.missions,
-      };
-
-    case JOIN_MISSIONS:
-      return {
-        ...state,
-        newMissions: state.newMissions.map((mission) => (
-          (mission.id !== action.missions)
-            ? { ...mission }
-            : { ...mission, reserved: true }
-        )),
-      };
-
-    case LEAVE_MISSIONS:
-      return {
-        ...state,
-        newMissions: state.newMissions.map((mission) => (
-          (mission.id !== action.missions)
-            ? { ...mission }
-            : { ...mission, reserved: false }
-        )),
-      };
+    case ADD_MISSIONS:
+      return [...state, ...action.missions];
+    case JOIN_MISSION:
+      return state.map((mission) => {
+        if (mission.id === action.id) {
+          return {
+            ...mission,
+            status: 'Active member',
+          };
+        }
+        return mission;
+      });
+    case LEAVE_MISSION:
+      return state.map((mission) => {
+        if (mission.id === action.id) {
+          return {
+            ...mission,
+            status: 'Not a member',
+          };
+        }
+        return mission;
+      });
     default:
       return state;
   }

@@ -1,74 +1,54 @@
-const FETCH_DATA = 'my-app/rockets/FETCH';
-const RESERVE_ROCKET = 'my-app/rockets/RESERVE';
-const CANCEL_BOOKING_ROCKET = 'my-app/rockets/CANCEL';
+import fetchRockets from '../../utils/rockets-api';
 
-const initialState = [];
+const FETCH_ROCKETS = 'spaceX/rockets/FETCH_ROCKETS';
+const ADD_ROCKETS = 'spaceX/rockets/ADD_ROCKETS';
+const API_SUCCESS = 'spaceX/rockets/API_SUCCESS';
+const API_FAILURE = 'spaceX/rockets/API_FAILURE';
+const RESERVE_ROCKET = 'spaceX/rockets/RESERVE_ROCKET';
+const CANCEL_ROCKET = 'spaceX/rockets/CANCEL_ROCKET';
 
-const fetchData = (payload) => (
-  {
-    type: FETCH_DATA,
-    payload,
-  }
-);
+const initialRockets = [];
 
-export const reserve = (list, id) => {
-  const newState = list.map((rocket) => (
-    (rocket.id !== id)
-      ? rocket
-      : { ...rocket, reserved: 'true' }
-  ));
-  return ({
-    type: RESERVE_ROCKET,
-    payload: newState,
-  });
+export const fetchRocketsAction = () => (dispatch) => {
+  dispatch({ type: FETCH_ROCKETS });
+  return fetchRockets().then(
+    (rockets) => {
+      dispatch({ type: API_SUCCESS });
+      dispatch({ type: ADD_ROCKETS, rockets });
+    },
+    (error) => {
+      dispatch({ type: API_FAILURE, error });
+    },
+  );
 };
 
-export const cancel = (list, id) => {
-  const newState = list.map((rocket) => (
-    (rocket.id !== id)
-      ? rocket
-      : { ...rocket, reserved: 'false' }
-  ));
-  return ({
-    type: RESERVE_ROCKET,
-    payload: newState,
-  });
-};
+export const bookRocket = (id) => ({
+  type: RESERVE_ROCKET,
+  id,
+});
 
-export const fetchAPI = () => async (dispatch) => {
-  const response = await fetch('https://api.spacexdata.com/v3/rockets');
-  const data = await response.json();
-  const newArr = [];
-  data.map((each) => {
-    const {
-      id,
-      rocket_name: rocketName,
-      description,
-      wikipedia,
-    } = each;
-    const obj = {
-      id,
-      rocketName,
-      description,
-      wikipedia,
-      flickrImages: each.flickr_images[0],
-    };
-    return newArr.push(obj);
-  });
-  dispatch(fetchData(newArr));
-};
+export const cancelRocket = (id) => ({
+  type: CANCEL_ROCKET,
+  id,
+});
 
-const reducer = (state = initialState, action) => {
+const rocketsReducer = (state = initialRockets, action) => {
   switch (action.type) {
-    case FETCH_DATA:
-      return action.payload;
+    case ADD_ROCKETS:
+      return [...state, ...action.rockets];
     case RESERVE_ROCKET:
-      return action.payload;
-    case CANCEL_BOOKING_ROCKET:
-      return action.payload;
+      return state.map((rocket) => {
+        if (rocket.id !== action.id) return rocket;
+        return { ...rocket, reserved: true };
+      });
+    case CANCEL_ROCKET:
+      return state.map((rocket) => {
+        if (rocket.id !== action.id) return rocket;
+        return { ...rocket, reserved: false };
+      });
     default:
       return state;
   }
 };
 
-export default reducer;
+export default rocketsReducer;
