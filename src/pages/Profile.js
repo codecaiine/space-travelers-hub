@@ -5,6 +5,8 @@ import '../styling/profile.css';
 const Profile = () => {
   const missions = useSelector((state) => state.missionsReducer.newMissions);
 
+  const list = useSelector((state) => state.rocketsReducer);
+  const filteredRockets = list.filter((each) => each.reserved === 'true');
   let filteredMissions;
 
   if (missions) {
@@ -33,11 +35,13 @@ const Profile = () => {
           <h2>My Rockets</h2>
           <ul className="profile-lists">
             <></>
+            {filteredRockets.map((reserved) => (
+              <li key={reserved.id} className="list">{reserved.rocketName}</li>
+            ))}
           </ul>
         </div>
       </div>
     </section>
   );
 };
-
 export default Profile;
