@@ -1,7 +1,7 @@
 import { React, useEffect } from 'react';
 import { Route, Switch } from 'react-router';
 import { useDispatch } from 'react-redux';
-import Nav from './components/Nav';
+import Navbar from './components/Navbar';
 import Profile from './pages/Profile';
 import Rockets from './pages/Rockets';
 import Missions from './pages/Missions';
@@ -18,7 +18,7 @@ const App = () => {
 
   return (
     <>
-      <Nav />
+      <Navbar />
       <Switch>
         <Route exact path="/myprofile">
           <Profile />

@@ -1,4 +1,4 @@
-.each-rocket {
+.rocket-container {
   margin-block: 2%;
   width: 95%;
   margin-inline: auto;
@@ -11,12 +11,12 @@
   height: 175px;
 }
 
-.rocket-details > p {
+.rocket-info > p {
   margin-block: 1.25%;
   font-size: 16px;
 }
 
-.rocket-reserve-btn {
+.btn-reservation {
   background-color: blue;
   color: white;
   width: 25%;
