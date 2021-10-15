@@ -3,6 +3,15 @@
 This is web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.
 We work with  data from the SpaceX API.
 
+![screenshot](./src/assets/img/capstone1.PNG)
+
+![screenshot](./src/images/img/capstone2.PNG)
+
+![screenshot](./src/images/img/capstone3.PNG)
+
+![screenshot](./src/images/capstone4.PNG)
+
+![screenshot](./src/images/capstone5.PNG)
 
 
 ## Live Demo
