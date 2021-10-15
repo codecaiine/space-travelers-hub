@@ -9,9 +9,9 @@ We work with  data from the SpaceX API.
 
 ![screenshot](./src/images/img/capstone3.PNG)
 
-![screenshot](./src/images/capstone4.PNG)
+![screenshot](./src/images/img/capstone4.PNG)
 
-![screenshot](./src/images/capstone5.PNG)
+![screenshot](./src/images/img/capstone5.PNG)
 
 
 ## Live Demo
