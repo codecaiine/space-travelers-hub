@@ -1,0 +1,56 @@
+.my-profile {
+  width: 100%;
+}
+
+.profile {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.profile h2 {
+  font-size: 26px;
+  padding-bottom: 15px;
+  text-align: center;
+}
+
+.rockets {
+  margin-top: 30px;
+}
+
+.profile-lists {
+  margin: 0;
+  padding: 0;
+  border: 1px solid rgb(148, 146, 146);
+  border-bottom: none;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.list {
+  list-style: none;
+  padding: 10px 15px;
+  border-bottom: 1px solid rgb(148, 146, 146);
+}
+
+@media all and (min-width: 768px) {
+  .profile {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 40px auto;
+  }
+
+  .profile h2 {
+    text-align: start;
+  }
+
+  .rockets {
+    margin-top: 0;
+  }
+
+  .rockets,
+  .missions {
+    width: 45%;
+  }
+}

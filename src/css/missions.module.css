@@ -1,78 +1,78 @@
 table {
-    width: 95%;
-    margin: 40px auto;
-    text-align: center;
-  }
-  
-  table,
-  th,
-  td {
-    border: 1px solid rgba(201, 179, 179, 0.474);
-    border-collapse: collapse;
-  }
-  
-  th,
-  td {
-    padding: 15px 10px;
-  }
-  
-  td:nth-child(2) {
-    width: 70%;
-    text-align: justify;
-  }
-  
-  .mission-row:nth-child(odd) {
-    background-color: lightgray;
-  }
-  
-  td:nth-child(3),
-  td:nth-child(4) {
-    width: 15%;
-  }
-  
-  .name {
-    font-weight: bold;
-  }
-  
-  .member {
-    text-transform: uppercase;
-    color: #fff;
-    padding: 4px 6px;
-    font-size: 13px;
-    border-radius: 5px;
-  }
-  
-  .not-active {
-    background-color: gray;
-  }
-  
-  .active {
-    background-color: rgb(86, 177, 86);
-  }
-  
-  .btn {
-    padding: 8px 12px;
-    border-radius: 5px;
-    outline: none;
-    cursor: pointer;
-    transition: 300ms;
-  }
-  
-  .join {
-    border: 2px solid #979696;
-  }
-  
-  .join:hover {
-    background-color: gray;
-    color: #fff;
-  }
-  
-  .leave {
-    border: 2px solid rgb(213, 73, 73);
-    color: rgb(213, 73, 73);
-  }
-  
-  .leave:hover {
-    background-color: rgb(237, 51, 51);
-    color: #fff;
-  }
+  width: 95%;
+  margin: 40px auto;
+  text-align: center;
+}
+
+table,
+th,
+td {
+  border: 1px solid rgba(201, 179, 179, 0.474);
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 15px 10px;
+}
+
+td:nth-child(2) {
+  width: 70%;
+  text-align: justify;
+}
+
+.mission-row:nth-child(odd) {
+  background-color: lightgray;
+}
+
+td:nth-child(3),
+td:nth-child(4) {
+  width: 15%;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.member {
+  text-transform: uppercase;
+  color: #fff;
+  padding: 4px 6px;
+  font-size: 13px;
+  border-radius: 5px;
+}
+
+.not-active {
+  background-color: gray;
+}
+
+.active {
+  background-color: rgb(86, 177, 86);
+}
+
+.btn {
+  padding: 8px 12px;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.join {
+  border: 2px solid #979696;
+}
+
+.join:hover {
+  background-color: gray;
+  color: #fff;
+}
+
+.leave {
+  border: 2px solid rgb(213, 73, 73);
+  color: rgb(213, 73, 73);
+}
+
+.leave:hover {
+  background-color: rgb(237, 51, 51);
+  color: #fff;
+}
