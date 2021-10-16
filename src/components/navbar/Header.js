@@ -3,7 +3,7 @@ import {
   Navbar, Container,
 } from 'react-bootstrap';
 import NavbarComponent from './NavbarComponent';
-import logo from '../../assets/img/planet.png';
+import logo from '../../media/planet.png';
 import Logo from './Logo';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
