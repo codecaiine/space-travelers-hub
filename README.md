@@ -5,14 +5,6 @@ We work with  data from the SpaceX API.
 
 ![screenshot](./src/assets/img/capstone1.PNG)
 
-![screenshot](./src/assets/img/capstone2.PNG)
-
-![screenshot](./src/assets/img/capstone3.PNG)
-
-![screenshot](./src/assets/img/capstone4.PNG)
-
-![screenshot](./src/assets/img/capstone5.PNG)
-
 
 ## Live Demo
 
